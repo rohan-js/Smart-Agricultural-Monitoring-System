@@ -7,7 +7,7 @@
             "width": 24,
             "height": 1,
             "properties": {
-                "markdown": "# 🌱 Smart Agriculture Monitoring Dashboard"
+                "markdown": "# Smart Agriculture Monitoring Dashboard"
             }
         },
         {
@@ -17,7 +17,7 @@
             "width": 8,
             "height": 6,
             "properties": {
-                "title": "🌡️ Temperature (°C)",
+                "title": "Temperature (°C)",
                 "view": "timeSeries",
                 "stacked": false,
                 "metrics": [
@@ -72,7 +72,7 @@
             "width": 8,
             "height": 6,
             "properties": {
-                "title": "💧 Humidity (%)",
+                "title": "Humidity (%)",
                 "view": "timeSeries",
                 "stacked": false,
                 "metrics": [
@@ -121,7 +121,7 @@
             "width": 8,
             "height": 6,
             "properties": {
-                "title": "🌿 Soil Moisture (%)",
+                "title": "Soil Moisture (%)",
                 "view": "timeSeries",
                 "stacked": false,
                 "metrics": [
@@ -246,7 +246,7 @@
             "width": 6,
             "height": 4,
             "properties": {
-                "title": "⚠️ Alert Count",
+                "title": "Alert Count",
                 "view": "singleValue",
                 "metrics": [
                     [
@@ -269,7 +269,7 @@
             "width": 24,
             "height": 4,
             "properties": {
-                "title": "📋 Recent Alerts",
+                "title": "Recent Alerts",
                 "query": "SOURCE '/aws/iot/agriculture-alerts' | fields @timestamp, data.severity, data.alert_type, data.message | sort @timestamp desc | limit 20",
                 "region": "us-east-1",
                 "view": "table"

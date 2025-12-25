@@ -1,4 +1,4 @@
-# Smart Agriculture Monitoring System 🌱
+# Smart Agriculture Monitoring System
 
 A distributed IoT monitoring system for agricultural environments using Raspberry Pi sensors and AWS IoT Core for real-time data collection, visualization, and alerting.
 
@@ -8,12 +8,26 @@ A distributed IoT monitoring system for agricultural environments using Raspberr
 
 ## Features
 
-- 🌡️ **Temperature & Humidity Monitoring** - DHT22 sensor integration
-- 💧 **Soil Moisture Tracking** - Capacitive sensor with MCP3008 ADC
-- ☁️ **AWS IoT Core Integration** - Secure MQTT publishing with TLS
-- 📊 **CloudWatch Dashboards** - Real-time visualization
-- 🚨 **Threshold Alerts** - Configurable warning and critical alerts via SNS
-- 🔄 **Simulation Mode** - Test without hardware
+- **Temperature & Humidity Monitoring** - DHT22 sensor integration
+- **Soil Moisture Tracking** - Capacitive sensor with MCP3008 ADC
+- **AWS IoT Core Integration** - Secure MQTT publishing with TLS
+- **CloudWatch Dashboards** - Real-time visualization
+- **Threshold Alerts** - Configurable warning and critical alerts via SNS
+- **Simulation Mode** - Test without hardware
+
+## Demo Screenshots
+
+### CloudWatch Dashboard
+![CloudWatch Dashboard](docs/screenshots/CloudWatch%20Dashboard.png)
+
+### MQTT Test Client - Real-time Messages
+![MQTT Test Client](docs/screenshots/MQTT%20Test%20Client.png)
+
+### Email Alert Notification
+![Email Alert](docs/screenshots/Email%20Alert.png)
+
+### System Running
+![Terminal](docs/screenshots/Terminal.png)
 
 ## Architecture
 
@@ -173,13 +187,13 @@ Starting Smart Agriculture Monitoring System...
 
 | Item | Location | Status |
 |------|----------|--------|
-| Sensor reading scripts | `scripts/sensors/` | ✅ |
-| MQTT publishing | `scripts/aws/` | ✅ |
-| AWS IoT policy | `aws/iot-policy.json` | ✅ |
-| AWS setup guide | `aws/setup_instructions.md` | ✅ |
-| CloudWatch dashboard | `aws/cloudwatch-dashboard.json` | ✅ |
-| Alert configuration | `aws/iot-rule-alerts.json` | ✅ |
-| Screenshots | `docs/screenshots/` | ✅ |
+| Sensor reading scripts | `scripts/sensors/` | Done |
+| MQTT publishing | `scripts/aws/` | Done |
+| AWS IoT policy | `aws/iot-policy.json` | Done |
+| AWS setup guide | `aws/setup_instructions.md` | Done |
+| CloudWatch dashboard | `aws/cloudwatch-dashboard.json` | Done |
+| Alert configuration | `aws/iot-rule-alerts.json` | Done |
+| Screenshots | `docs/screenshots/` | Done |
 
 ## Screenshots
 

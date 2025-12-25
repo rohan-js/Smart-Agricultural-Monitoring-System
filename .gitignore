@@ -27,8 +27,3 @@ logs/*.log
 # OS
 .DS_Store
 Thumbs.db
-
-# Screenshots (user-generated)
-docs/screenshots/*.png
-docs/screenshots/*.jpg
-!docs/screenshots/.gitkeep
