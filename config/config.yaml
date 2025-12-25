@@ -1,0 +1,84 @@
+# Smart Agriculture Monitoring System - Configuration
+# This file contains all configurable parameters for the monitoring system
+
+# Device identification
+device:
+  id: "farm-sensor-001"
+  location: "Field-A"
+  description: "Primary soil and climate monitoring station"
+
+# AWS IoT Core Configuration
+aws_iot:
+  endpoint: "a3ua9ubdmk72g0-ats.iot.eu-north-1.amazonaws.com"
+  region: "eu-north-1"
+  
+  # Certificate paths (relative to project root)
+  certificates:
+    root_ca: "certs/AmazonRootCA1.pem"
+    device_cert: "certs/device-certificate.pem.crt"
+    private_key: "certs/device-private.pem.key"
+  
+  # MQTT topics
+  topics:
+    telemetry: "agriculture/sensors/{device_id}/telemetry"
+    status: "agriculture/sensors/{device_id}/status"
+    alerts: "agriculture/sensors/{device_id}/alerts"
+  
+  # Connection settings
+  connection:
+    keep_alive_seconds: 30
+    ping_timeout_ms: 3000
+    reconnect_min_seconds: 1
+    reconnect_max_seconds: 128
+
+# Sensor Configuration
+sensors:
+  dht22:
+    enabled: true
+    gpio_pin: 4  # BCM pin number
+    read_interval_seconds: 30
+    retry_count: 3
+    retry_delay_seconds: 2
+  
+  soil_moisture:
+    enabled: true
+    # MCP3008 ADC configuration
+    adc_channel: 0
+    spi_bus: 0
+    spi_device: 0
+    read_interval_seconds: 30
+    # Calibration values (raw ADC values)
+    calibration:
+      dry_value: 1023  # ADC value when completely dry
+      wet_value: 300   # ADC value when submerged in water
+
+# Data publishing settings
+publishing:
+  interval_seconds: 30
+  batch_size: 1  # Number of readings per publish
+  qos: 1  # MQTT QoS level (0, 1, or 2)
+  retain: false
+
+# CloudWatch metrics (optional)
+cloudwatch:
+  enabled: true
+  namespace: "SmartAgriculture"
+  publish_interval_seconds: 60
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file:
+    enabled: true
+    path: "logs/monitoring.log"
+    max_bytes: 10485760  # 10 MB
+    backup_count: 5
+  console:
+    enabled: true
+
+# Simulation mode (for testing without hardware)
+simulation:
+  enabled: false
+  temperature_range: [20, 35]  # Celsius
+  humidity_range: [40, 80]     # Percentage
+  soil_moisture_range: [30, 70]  # Percentage

@@ -1,0 +1,279 @@
+{
+    "widgets": [
+        {
+            "type": "text",
+            "x": 0,
+            "y": 0,
+            "width": 24,
+            "height": 1,
+            "properties": {
+                "markdown": "# 🌱 Smart Agriculture Monitoring Dashboard"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 1,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "🌡️ Temperature (°C)",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Temperature",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        {
+                            "color": "#ff7f0e"
+                        }
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 60,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 50,
+                        "label": "Celsius"
+                    }
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "label": "Warning High",
+                            "value": 35,
+                            "color": "#ffbb00",
+                            "fill": "above"
+                        },
+                        {
+                            "label": "Critical High",
+                            "value": 40,
+                            "color": "#d62728",
+                            "fill": "above"
+                        },
+                        {
+                            "label": "Warning Low",
+                            "value": 10,
+                            "color": "#ffbb00",
+                            "fill": "below"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 1,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "💧 Humidity (%)",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Humidity",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        {
+                            "color": "#1f77b4"
+                        }
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 60,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 100,
+                        "label": "Percent"
+                    }
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "label": "Warning High",
+                            "value": 80,
+                            "color": "#ffbb00",
+                            "fill": "above"
+                        },
+                        {
+                            "label": "Warning Low",
+                            "value": 30,
+                            "color": "#ffbb00",
+                            "fill": "below"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 1,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "🌿 Soil Moisture (%)",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "SoilMoisture",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        {
+                            "color": "#2ca02c"
+                        }
+                    ]
+                ],
+                "region": "eu-north-1",
+                "period": 60,
+                "stat": "Average",
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 100,
+                        "label": "Percent"
+                    }
+                },
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "label": "Too Wet",
+                            "value": 85,
+                            "color": "#1f77b4",
+                            "fill": "above"
+                        },
+                        {
+                            "label": "Optimal High",
+                            "value": 70,
+                            "color": "#2ca02c"
+                        },
+                        {
+                            "label": "Optimal Low",
+                            "value": 40,
+                            "color": "#2ca02c"
+                        },
+                        {
+                            "label": "Needs Water",
+                            "value": 25,
+                            "color": "#d62728",
+                            "fill": "below"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 7,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "title": "Current Temperature",
+                "view": "singleValue",
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Temperature",
+                        "DeviceId",
+                        "farm-sensor-001"
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 60,
+                "stat": "Average"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 6,
+            "y": 7,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "title": "Current Humidity",
+                "view": "singleValue",
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Humidity",
+                        "DeviceId",
+                        "farm-sensor-001"
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 60,
+                "stat": "Average"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 7,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "title": "Current Soil Moisture",
+                "view": "singleValue",
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "SoilMoisture",
+                        "DeviceId",
+                        "farm-sensor-001"
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 60,
+                "stat": "Average"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 18,
+            "y": 7,
+            "width": 6,
+            "height": 4,
+            "properties": {
+                "title": "⚠️ Alert Count",
+                "view": "singleValue",
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "AlertCount",
+                        {
+                            "color": "#d62728"
+                        }
+                    ]
+                ],
+                "region": "us-east-1",
+                "period": 3600,
+                "stat": "Sum"
+            }
+        },
+        {
+            "type": "log",
+            "x": 0,
+            "y": 11,
+            "width": 24,
+            "height": 4,
+            "properties": {
+                "title": "📋 Recent Alerts",
+                "query": "SOURCE '/aws/iot/agriculture-alerts' | fields @timestamp, data.severity, data.alert_type, data.message | sort @timestamp desc | limit 20",
+                "region": "us-east-1",
+                "view": "table"
+            }
+        }
+    ]
+}

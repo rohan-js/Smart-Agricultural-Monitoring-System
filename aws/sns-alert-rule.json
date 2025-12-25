@@ -1,0 +1,15 @@
+{
+    "sql": "SELECT * FROM 'agriculture/sensors/+/alerts' WHERE severity = 'critical' OR severity = 'warning'",
+    "ruleDisabled": false,
+    "awsIotSqlVersion": "2016-03-23",
+    "actions": [
+        {
+            "sns": {
+                "targetArn": "arn:aws:sns:eu-north-1:YOUR_ACCOUNT_ID:AgricultureAlerts",
+                "roleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/IoT_SNS_Role",
+                "messageFormat": "RAW"
+            }
+        }
+    ],
+    "description": "Route agriculture alerts to SNS for email notifications"
+}

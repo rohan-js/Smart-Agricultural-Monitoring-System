@@ -1,0 +1,37 @@
+{
+    "ruleDescription": "Route agriculture sensor alerts to SNS and CloudWatch when thresholds are exceeded",
+    "sql": "SELECT * FROM 'agriculture/sensors/+/alerts' WHERE severity = 'critical' OR severity = 'warning'",
+    "ruleDisabled": false,
+    "actions": [
+        {
+            "sns": {
+                "targetArn": "arn:aws:sns:YOUR_REGION:YOUR_ACCOUNT_ID:AgricultureAlerts",
+                "roleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/IoTSNSPublishRole",
+                "messageFormat": "JSON"
+            }
+        },
+        {
+            "cloudwatchLogs": {
+                "roleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/IoTCloudWatchLogsRole",
+                "logGroupName": "/aws/iot/agriculture-alerts"
+            }
+        },
+        {
+            "cloudwatchMetric": {
+                "roleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/IoTCloudWatchMetricRole",
+                "metricNamespace": "SmartAgriculture",
+                "metricName": "AlertCount",
+                "metricValue": "1",
+                "metricUnit": "Count",
+                "metricTimestamp": "${timestamp()}"
+            }
+        }
+    ],
+    "errorAction": {
+        "cloudwatchLogs": {
+            "roleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/IoTCloudWatchLogsRole",
+            "logGroupName": "/aws/iot/agriculture-errors"
+        }
+    },
+    "awsIotSqlVersion": "2016-03-23"
+}

@@ -1,0 +1,6 @@
+# This directory contains AWS IoT certificates
+# DO NOT commit actual certificates to version control!
+# Files to place here:
+# - AmazonRootCA1.pem (AWS Root CA)
+# - device-certificate.pem.crt (Device certificate)
+# - device-private.pem.key (Private key)

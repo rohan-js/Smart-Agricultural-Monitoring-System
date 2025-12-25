@@ -1,0 +1,76 @@
+{
+    "widgets": [
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 0,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "Temperature",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Temperature",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        "Location",
+                        "Field-A"
+                    ]
+                ],
+                "region": "eu-north-1",
+                "period": 60
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 0,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "Humidity",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "Humidity",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        "Location",
+                        "Field-A"
+                    ]
+                ],
+                "region": "eu-north-1",
+                "period": 60
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 0,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "title": "Soil Moisture",
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [
+                        "SmartAgriculture",
+                        "SoilMoisture",
+                        "DeviceId",
+                        "farm-sensor-001",
+                        "Location",
+                        "Field-A"
+                    ]
+                ],
+                "region": "eu-north-1",
+                "period": 60
+            }
+        }
+    ]
+}

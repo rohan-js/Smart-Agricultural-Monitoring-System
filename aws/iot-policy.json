@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:Connect",
+      "Resource": "arn:aws:iot:*:*:client/${iot:Connection.Thing.ThingName}"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Publish",
+      "Resource": [
+        "arn:aws:iot:*:*:topic/agriculture/sensors/${iot:Connection.Thing.ThingName}/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Subscribe",
+      "Resource": [
+        "arn:aws:iot:*:*:topicfilter/agriculture/sensors/${iot:Connection.Thing.ThingName}/*",
+        "arn:aws:iot:*:*:topicfilter/agriculture/commands/${iot:Connection.Thing.ThingName}/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Receive",
+      "Resource": [
+        "arn:aws:iot:*:*:topic/agriculture/sensors/${iot:Connection.Thing.ThingName}/*",
+        "arn:aws:iot:*:*:topic/agriculture/commands/${iot:Connection.Thing.ThingName}/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+# Alert Threshold Configuration
+# Define min/max acceptable values for each sensor measurement
+# Alerts are triggered when values exceed these thresholds
+
+# Temperature thresholds (Celsius)
+temperature:
+  warning:
+    min: 10   # Below this triggers warning
+    max: 28   # Lowered - simulated range goes up to 35
+  critical:
+    min: 5    # Below this triggers critical alert
+    max: 33   # Above this triggers critical alert
+
+# Humidity thresholds (Percentage)
+humidity:
+  warning:
+    min: 30
+    max: 65   # Lowered - simulated range goes up to 80
+  critical:
+    min: 20
+    max: 75
+
+# Soil moisture thresholds (Percentage)
+soil_moisture:
+  warning:
+    min: 35   # Raised - simulated range starts at 30
+    max: 65   # Lowered - simulated range goes up to 70
+  critical:
+    min: 25
+    max: 75
+
+# Alert settings
+alerts:
+  # Minimum interval between repeated alerts for same condition (seconds)
+  cooldown_seconds: 60
+  
+  # Number of consecutive readings before triggering alert
+  consecutive_readings: 1
+  
+  # Alert severity levels
+  severity_levels:
+    - name: "info"
+      priority: 0
+    - name: "warning"
+      priority: 1
+    - name: "critical"
+      priority: 2

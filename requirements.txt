@@ -1,0 +1,25 @@
+# Smart Agriculture Monitoring System - Dependencies
+# Install with: pip install -r requirements.txt
+
+# AWS IoT SDK for MQTT communication
+awsiotsdk>=1.0.0
+
+# AWS SDK for CloudWatch metrics and other AWS services
+boto3>=1.26.0
+
+# DHT22 Temperature/Humidity Sensor Library
+# Note: Requires libgpiod2 on Raspberry Pi
+Adafruit-DHT>=1.4.0
+
+# SPI interface for MCP3008 ADC (soil moisture sensor)
+spidev>=3.5
+
+# GPIO control for Raspberry Pi
+# Note: Only works on Raspberry Pi hardware
+RPi.GPIO>=0.7.0
+
+# Configuration file parsing
+pyyaml>=6.0
+
+# Logging with rotation
+python-json-logger>=2.0.0
